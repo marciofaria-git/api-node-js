@@ -1,18 +1,13 @@
 import express from 'express';
+import { categoriesRoutes } from './routes/categories.routes';
 
-const portApplication = 3333
+const portApplication = 3333;
 
 const app = express();
 
-app.use(express.json())
+app.use(express.json());
 
-app.get("/",(request, response)=>{
-  return response.json({message:"Hellow World!"})
-})
+app.use(categoriesRoutes);
 
-app.post("/todo",(request, response)=>{
-  const {item} = request.body;
-  return response.json({item});
-})
 
 app.listen(portApplication, ()=> console.log("Server is running!"));
