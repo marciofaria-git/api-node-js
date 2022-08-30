@@ -1,4 +1,5 @@
-import { CategoriesRepository } from "../repositories/CategoriesRepository";
+
+import { ICategoriesRepository } from "../repositories/ICategoriesRepository";
 
 
 
@@ -9,7 +10,7 @@ interface ICreateCategoryService{
 
 class CreateCategoryService{
   constructor(
-    private categoriesRepository: CategoriesRepository){}
+    private categoriesRepository: ICategoriesRepository){}
 
   execute({description, name}:ICreateCategoryService) {
     
